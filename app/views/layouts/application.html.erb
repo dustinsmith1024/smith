@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Smith 1024</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="header">
+    <h1><a href="/">SMITH 1024</a></h1>
+    <p>Bytes of Me</p>
+  </div>
+  <div id="nav">
+    <ul>
+      <li id="blog"><a href="/blog">Blog</a></li>
+      <li id="portfolio"><a href="/portfolio">Portfolio</a></li>
+      <li id="pics"><a href="/pics">Pics</a></li>
+      <li id="twitter"><a href="/twitter">Twitter</a></li>
+    </ul>
+  </div>
+  <div id="body">
+<%= yield %>
+  </div>
+  <div id="footer" >
+  </div>
+</body>
+</html>

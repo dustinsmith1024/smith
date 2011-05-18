@@ -1,0 +1,15 @@
+<h1>Posts</h1>
+
+<div id="posts" >
+<% @posts.each do |post| %>
+  <div class="post" >
+    <h2><%= post.title %></h2>
+    <p><%= post.body %></p>
+    <p><%= link_to 'Show', post %></p>
+    <p><%= link_to 'Edit', edit_post_path(post) %></p>
+    <p><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></p>
+  </div>
+<% end %>
+</div>
+
+<%= link_to 'New Post', new_post_path %>
