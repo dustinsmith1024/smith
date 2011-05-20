@@ -21,6 +21,11 @@
     </ul>
   </div>
   <div id="body">
+    <div class="flash-container">
+      <% flash.each do |key, value| %>
+          <p class="flash <%= key %>"><%= value %></p>
+        <% end %>
+    </div>
     <div id="user_nav">
       <% if current_user %>
         Logged in as <%= current_user.email %>.

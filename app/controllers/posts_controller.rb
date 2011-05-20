@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :check_user, :only => [:new, :update, :edit, :destroy]
+
   # GET /posts
   # GET /posts.xml
   def index
@@ -39,7 +41,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+      @post = Post.find(params[:id])
   end
 
   # POST /posts
@@ -85,4 +87,14 @@ class PostsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  private 
+
+    def check_user
+      if !current_user
+        flash[:error] = "Sorry, you don't have permission to manage posts!"
+        redirect_to(root_url)                                                    
+      end
+    end
+
 end

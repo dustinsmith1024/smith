@@ -1,14 +1,7 @@
 <h1>Posts</h1>
 
 <div id="posts" >
-<% @posts.each do |post| %>
-  <div class="post" >
-    <h2><%= post.title %></h2>
-    <p>Created: <%= post.created_at.to_s(:long) %></p>
-    <p><%= post.body %></p>
-    <p><%= link_to 'Show', post %> <%= link_to 'Edit', edit_post_path(post) if current_user %> <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete if current_user %></p>
-  </div>
-<% end %>
+  <%= render @posts %>
 </div>
 
 <%= link_to 'New Post', new_post_path if current_user %>

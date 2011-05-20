@@ -7,6 +7,14 @@ body {
   height: 100%;
   color: black;
 }
+.flash {
+  background-color:#3AA6D0;
+  color: white;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
 a, a:hover, a:visited {
   background: none;
   color: #3AA6D0;

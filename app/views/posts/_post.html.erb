@@ -1,0 +1,13 @@
+<div class="post" >
+  <h2><%= link_to post.title, post %></h2>
+    <p>Created: <%= post.created_at.to_s(:long) %></p>
+    <p><%= post.body %></p>      <p>
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="dustinsmith1024">Tweet</a>        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    </p>
+    <% if current_user %>
+      <p>
+        <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete if current_user %>
+    </p>
+  <% end %>
+</div>
