@@ -4,19 +4,56 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all
-
+    if params[:all]
+      @posts = Post.all
+    elsif
+      @posts = Post.tagged_with("blog")
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }
     end
   end
 
-  def twitter
+  def pictures
+  FlickRaw.api_key="cca4e5c768a106ef85d2a19e22f8222d"
+  FlickRaw.shared_secret="8a7e63e250a887fe"
+  #info = flickr.photos.getInfo(:photo_id => "5752508461")
+  #url = FlickRaw.url_photostream(info) # => "http://www.flickr.com/photos/41650587@N02/"
+  #logger.info(url)
+  username = "dustinsmith1024"
+  user = flickr.people.findByUsername( :username => username )
+  @photo_list = flickr.people.getPublicPhotos( :user_id => user.nsid, :count => 9, :extras => 'description' )
+  @photo_list.each do |p|
+    logger.info(p.inspect)
+  end
+  logger.info(@photo_list)
+    #@posts = Post.tagged_with("me")
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
     end
   end
+
+  def me
+    @posts = Post.tagged_with("me")
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def work
+    @posts = Post.tagged_with("work")
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def twitter
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /posts/1
   # GET /posts/1.xml
   def show
@@ -64,7 +101,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.xml
   def update
     @post = Post.find(params[:id])
-
+    @post.tag_list = params[:tags]
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to(@post, :notice => 'Post was successfully updated.') }

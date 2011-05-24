@@ -19,6 +19,10 @@
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </div>
+  <div class=field">
+    <%= f.label :tags %>
+    <input type="text" id="tags" name="tags" value="<%= @post.tags.join(',') %>" />
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,0 +1,7 @@
+<h1>About Me</h1>
+
+<div id="posts" >
+  <%= render @posts %>
+</div>
+
+<%= link_to 'New Post', new_post_path if current_user %>

@@ -1,0 +1,15 @@
+<h1>My Pictures</h1>
+<p>
+  <a href="http://www.flickr.com/photos/dustinsmith1024/">My Flickr Photostream</a>
+</p>
+
+<ul id="photo_list">
+<% @photo_list.each do |photo| %>
+  <li>
+    <% info = flickr.photos.getInfo(:photo_id => photo.id) %>
+    <% img_url = FlickRaw.url_b(info) %>
+    <img src="<%= img_url %>" alt="Flickr Photo" title="<%= photo.title %>" />
+    <p class="caption"><%= photo.description %></p>
+  </li>
+<% end %>
+</ul>
