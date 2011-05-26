@@ -1,11 +1,28 @@
 body {
-  text-align: center;
   background: grey url('/images/bg-grey.png');
+  border-top: 2px solid black;
+  color: black;
+  height: 100%;
   margin: 0px;
   padding: 0px;
-  border-top: 2px solid black;
-  height: 100%;
-  color: black;
+  text-align: center;
+}
+.gradient {
+    background: #4C95AF;  /* for IE */
+    background:
+        -moz-linear-gradient(  /* for firefox */
+            center bottom,
+            rgb(76,149,175) 5%,
+            rgb(183,185,52) 95%
+        );
+    background: -webkit-gradient(  /* for chrome and safari */
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.05, rgb(76,149,175)),
+        color-stop(0.95, rgb(183,185,52))
+    );
+
 }
 .flash {
   background-color:#3AA6D0;
@@ -34,11 +51,13 @@ img.twitter-link {
   width: 100px;
 }
 div#nav ul li a img.twitter-bird {
+  filter: 0;
   height: 35px;
   margin: -10px;
   width: 35px;
 }
 div#nav ul li a img.email-link {
+  filter: 0;
   height: 25px;
   margin: -5px;
   width: 25px;
@@ -63,13 +82,13 @@ ul#photo_list li p.caption {
   color: black;
 }
 div#header h1{
-  font-size: 40px;
+  font-size: 45px;
   margin-bottom: 0px;
 }
 div#header p{
-  margin-top:2px;
-  padding-top: 4px;
-  margin-left: 190px;
+  margin-left: 225px;
+  margin-top:5px;
+  padding-top: 5px;
 }
 div#nav {
   -moz-border-radius: 10px 10px 0 0;
@@ -84,10 +103,22 @@ div#nav {
 div#nav {
   text-align: right;
   padding: 0px 10px 1px 10px;
+  border: 2px solid black;
+  border-bottom: 0;
+}
+h2, h3, h4, h5, h6 {
+  font-family: 'FranklinGothicFSDemiCondensed',"Helvetica Neue",Arial,Helvetica,sans-serif;
+  text-transform: uppercase;
+}
+.post p {
+  font-family: Georgia,"Times New Roman",Times,serif;
 }
 div#nav ul {
   list-style-type: none;
-  margin-bottom: 0;
+  margin: 0;
+}
+div.post h2 {
+  font-size: 26px;
 }
 div#nav li {
   background: grey url('/images/bg-grey.png');
@@ -116,9 +147,25 @@ div#body {
   padding: 10px;
   -moz-border-radius: 0px 0px 10px 10px;
   border-radius: 0px 0px 10px 10px;
+ /* border: 8px solid rgba(255, 255, 255, 0.1); */
+  border: 2px solid black;
+  border-top: 0;
  /* -moz-box-shadow: -5px 5px 2px grey;
   box-shadow: -2px 0px 5px grey;
  */
+}
+p.intro {
+  line-height: 1.4em;
+  font-size: 18px;
+}
+span.first-letter {
+  font-size: 3.2em;
+  font-weight : bold;
+  float : left;
+  color : #3AA6D0;
+  line-height: .4em;
+  padding: .25em .08em 0 0;
+  margin: 0;
 }
 div#posts {
   padding: 10px;
