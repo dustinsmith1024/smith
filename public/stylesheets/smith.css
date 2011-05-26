@@ -1,8 +1,7 @@
-html {
+body {
   background-color: grey;
 }
 body {
-  background-color: grey;
   background: url("/images/bg-grey.png") repeat scroll 0 0 grey;
   border-top: 2px solid black;
   color: black;
