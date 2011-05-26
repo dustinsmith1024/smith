@@ -1,7 +1,7 @@
 <div class="post" >
   <h2><%= link_to post.title, post %></h2>
     <p><%= post.updated_at.to_s(:long) %></p>
-    <p><%= raw(post.body) %></p>
+    <div><%= raw(post.body) %></div>
     <p>Tagged with: <%= post.tags.to_sentence %></p>
     <p>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="dustinsmith1024">Tweet</a>
