@@ -165,6 +165,8 @@ span.first-letter {
   color : #3AA6D0;
   line-height: .4em;
   padding: .25em .08em 0 0;
+  #padding: 0.25em 0.08em 0.2em 0.00em;
+  _padding: 0.25em 0.08em 0.25em 0.00em;
   margin: 0;
 }
 div#posts {
