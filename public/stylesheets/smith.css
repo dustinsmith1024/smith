@@ -1,14 +1,11 @@
 body {
-  background: url("/images/bg-grey.png") repeat scroll 0 0 grey;
+  background: url("/images/bg-grey.png") repeat scroll 0 0 gray;
   border-top: 2px solid black;
   color: black;
   height: 100%;
   margin: 0px;
   padding: 0px;
   text-align: center;
-}
-body {
-  background-color: grey;
 }
 .gradient {
     background: #4C95AF;  /* for IE */
