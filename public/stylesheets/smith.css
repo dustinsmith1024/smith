@@ -68,7 +68,7 @@ div#nav ul li a img.email-link {
   margin: 0;
 }
 ul#photo_list li {
-  border: 1px solid grey;
+  border: 1px solid gray;
   padding: 10px;
   margin-bottom: 10px;
   list-style-type: none;
@@ -124,7 +124,7 @@ div.post h2 {
   font-size: 26px;
 }
 div#nav li {
-  background: grey url('/images/bg-grey.png');
+  background: gray url('/images/bg-grey.png');
   display: inline;
   padding: 10px 10px 3px 10px;
   -moz-border-radius: 0 0 10px 10px;
@@ -153,8 +153,8 @@ div#body {
  /* border: 8px solid rgba(255, 255, 255, 0.1); */
   border: 2px solid black;
   border-top: 0;
- /* -moz-box-shadow: -5px 5px 2px grey;
-  box-shadow: -2px 0px 5px grey;
+ /* -moz-box-shadow: -5px 5px 2px gray;
+  box-shadow: -2px 0px 5px gray;
  */
 }
 p.intro {
