@@ -1,6 +1,6 @@
 <div class="post" >
   <h2><%= link_to post.title, post %></h2>
-    <p><%= post.created_at.to_s(:long) %></p>
+    <p><%= post.updated_at.to_s(:long) %></p>
     <p><%= raw(post.body) %></p>
     <p>Tagged with: <%= post.tags.to_sentence %></p>
     <p>
