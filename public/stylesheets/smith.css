@@ -84,6 +84,9 @@ ul#photo_list li img {
 ul#photo_list li p.caption {
   color: black;
 }
+a img {
+  border: none;
+}
 div#header h1{
   font-size: 45px;
   margin-bottom: 0px;
