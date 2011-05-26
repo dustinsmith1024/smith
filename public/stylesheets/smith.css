@@ -1,7 +1,6 @@
 body {
-/*  background: url("/images/bg-grey.png") repeat scroll 0 0 grey;
- */
- border-top: 2px solid black;
+  background: url("/images/bg-grey.png") repeat scroll 0 0 grey;
+  border-top: 2px solid black;
   color: black;
   height: 100%;
   margin: 0px;
