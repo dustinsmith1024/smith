@@ -7,9 +7,9 @@
 <% @photo_list.each do |photo| %>
   <li>
     <% info = flickr.photos.getInfo(:photo_id => photo.id) %>
-    <% img_url = FlickRaw.url_b(info) %>
+    <% img_url = FlickRaw.url_b(info) %><%# change _b to _s _m _whatev for different sizes %>
     <img src="<%= img_url %>" alt="Flickr Photo" title="<%= photo.title %>" />
-    <p class="caption"><%= photo.description %></p>
+    <p class="caption"><%= raw photo.description %></p>
   </li>
 <% end %>
 </ul>

@@ -16,23 +16,29 @@ class PostsController < ApplicationController
   end
 
   def pictures
-  FlickRaw.api_key="cca4e5c768a106ef85d2a19e22f8222d"
-  FlickRaw.shared_secret="8a7e63e250a887fe"
-  #info = flickr.photos.getInfo(:photo_id => "5752508461")
-  #url = FlickRaw.url_photostream(info) # => "http://www.flickr.com/photos/41650587@N02/"
-  #logger.info(url)
-  username = "dustinsmith1024"
-  user = flickr.people.findByUsername( :username => username )
-  @photo_list = flickr.people.getPublicPhotos( :user_id => user.nsid, :count => 9, :extras => 'description' )
-  @photo_list.each do |p|
-    logger.info(p.inspect)
-  end
-  logger.info(@photo_list)
-    #@posts = Post.tagged_with("me")
-    respond_to do |format|
-      format.html
+    FlickRaw.api_key="cca4e5c768a106ef85d2a19e22f8222d"
+    FlickRaw.shared_secret="8a7e63e250a887fe"
+    #info = flickr.photos.getInfo(:photo_id => "5752508461")
+    #url = FlickRaw.url_photostream(info) # => "http://www.flickr.com/photos/41650587@N02/"
+    #logger.info(url)
+    username = "dustinsmith1024"
+    user = flickr.people.findByUsername( :username => username )
+    @photo_list = flickr.people.getPublicPhotos( :user_id => user.nsid, :count => 9, :extras => 'description' )
+
+    @photo_list.each do |p|
+      sizes = flickr.photos.getSizes :photo_id => p.id
+      logger.info(sizes.inspect)
+      #original = sizes.find {|s| s.label == 'Original' }
+      #original.width       # => "800"
+      logger.info(p.inspect)
     end
-  end
+
+    logger.info(@photo_list)
+      #@posts = Post.tagged_with("me")
+      respond_to do |format|
+        format.html
+      end
+    end
 
   def me
     @posts = Post.tagged_with("me")

@@ -116,6 +116,13 @@ h2, h3, h4, h5, h6 {
 .post p {
   font-family: Georgia,"Times New Roman",Times,serif;
 }
+.post img {
+  float: right;
+  margin-right: 10px;
+}
+.post p.footer {
+  clear: both;
+}
 div#nav ul {
   list-style-type: none;
   margin: 0;
