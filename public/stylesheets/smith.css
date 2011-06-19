@@ -88,6 +88,16 @@ div#header h1{
   font-size: 45px;
   margin-bottom: 0px;
 }
+div#header h1 a {
+  color: #C2C5C6;
+   -webkit-transition:color .4s ease-in-out;
+   -moz-transition: color .4s ease-in-out; 
+   -o-transition:color .4s ease-in-out;
+   transition:color .4s ease-in-out;
+}
+div#header h1 a:hover{
+   color: #3AA6D0; 
+}
 div#header p{
   margin-left: 225px;
   margin-top:5px;
@@ -139,9 +149,17 @@ div#nav li {
 }
 div#nav li a {
   color: lightGrey;
+   -webkit-transition:color .4s ease-in-out;
+   -moz-transition: color .4s ease-in-out;   
+   -o-transition:color .4s ease-in-out;
+   transition:color .4s ease-in-out;
 }
 div#nav li a:hover {
   color: #3AA6D0;
+   -webkit-transition:color .3s ease-in-out;
+   -moz-transition:color .3s ease-in-out;
+   -o-transition:color .3s ease-in-out;
+   transition:color .3s ease-in-out; 
 }
 div#nav li:hover {
   border-bottom: 0px solid #3AA6D0;
