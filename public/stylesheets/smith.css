@@ -113,6 +113,7 @@ a img {
 }
 div#header h1{
   font-size: 3.4615em;  /* 55 / 16 */
+  margin-bottom: 15px;
 }
 div#header h1 a {
   color: #C2C5C6;
@@ -129,9 +130,7 @@ div#header h1 a:hover{
    text-shadow: 1px 1px #ccc, -1px -1px #444;
 }
 div#header p{
-  margin: 0 auto;
-  /* margin-left: 24%;*/ /* 225px; */
-  margin-top: .263%;
+  margin: 0 auto 7px;
   padding-bottom: .263%;
 }
 span.sub-title {
