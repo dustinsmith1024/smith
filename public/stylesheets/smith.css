@@ -126,7 +126,7 @@ div#header h1 a {
 }
 div#header h1 a:hover{
    color: #3AA6D0;
-   font-size: 102%;
+   /*font-size: 102%;*/
    text-shadow: 1px 1px #ccc, -1px -1px #444;
 }
 div#header p{
@@ -220,6 +220,11 @@ div#body {
 p.intro {
   line-height: 1.4em;
   font-size: 1.38em /* 18px; */
+}
+@media screen and (min-width: 1200px) {
+  p.intro {
+    padding-bottom: 15px;
+  }
 }
 span.first-letter {
   font-size: 3.2em;
