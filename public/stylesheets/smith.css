@@ -201,6 +201,9 @@ div#nav li:hover {
 }
 
 @media screen and (max-width: 800px) {
+  div#nav {
+    text-align: center;
+  }
   div#nav ul {
     margin-top: 3px;
   }
