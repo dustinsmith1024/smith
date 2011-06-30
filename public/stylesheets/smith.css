@@ -200,7 +200,7 @@ div#nav li:hover {
   border-bottom: 0px solid #3AA6D0;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   body {
     width: 95%; /* 1042px */
   }
