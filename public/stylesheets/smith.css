@@ -277,3 +277,12 @@ div#twitter_div ul li{
 div#twitter_div ul li:hover {
   border: 2px solid #3AA6D0;
 }
+div#header ul {
+  text-align: right;
+}
+div#header ul li{
+  list-style-type: none;
+}
+div#header ul li:hover {
+}
+
