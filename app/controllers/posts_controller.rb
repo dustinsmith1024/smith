@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     #info = flickr.photos.getInfo(:photo_id => "5752508461")
     #url = FlickRaw.url_photostream(info) # => "http://www.flickr.com/photos/41650587@N02/"
     #logger.info(url)
-    username = "dustinsmith1024"
+    username = "dds1024"
     user = flickr.people.findByUsername( :username => username )
     @photo_list = flickr.people.getPublicPhotos( :user_id => user.nsid, :count => 9, :extras => 'description' )
 

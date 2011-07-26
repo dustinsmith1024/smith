@@ -2,13 +2,20 @@
   <a href="http://www.flickr.com/photos/dustinsmith1024/">My Flickr Photostream</a>
 </h1>
 
-<ul id="photo_list">
 <% @photo_list.each do |photo| %>
-  <li>
+  <p class="photo">
     <% info = flickr.photos.getInfo(:photo_id => photo.id) %>
-    <% img_url = FlickRaw.url_b(info) %><%# change _b to _s _m _whatev for different sizes %>
-    <img src="<%= img_url %>" alt="Flickr Photo" title="<%= photo.title %>" />
-    <p class="caption"><%= raw photo.description %></p>
-  </li>
+    <% img_url = FlickRaw.url_m(info) %><%# change _b to _s _m _whatev for different sizes %>
+    <% big_img_url = FlickRaw.url_b(info) %>
+    <a class="lightbox" rel="my-pics" href="<%= big_img_url %>" title="<%= photo.title %>: <%= photo.description %>">
+      <img src="<%= img_url %>" alt="Flickr Photo" title="<%= photo.title %>" />
+    </a>
+    <br/>
+    <span class="caption" >
+      <a href="<%= big_img_url %>" >
+        <%= photo.title %>
+      </a>
+    </span>
+  </p>
 <% end %>
-</ul>
+<div id="clear">&nbsp;</div>
