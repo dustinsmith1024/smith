@@ -1,7 +1,11 @@
 <h1>
   <a href="http://www.flickr.com/photos/dustinsmith1024/">My Flickr Photostream</a>
 </h1>
-
+<p>
+  Here's some pictures from my Flickr account.
+  Click the photo for a pop-up image.
+  Click the blue titles for full size image.
+</p>
 <% @photo_list.each do |photo| %>
   <p class="photo">
     <% info = flickr.photos.getInfo(:photo_id => photo.id) %>

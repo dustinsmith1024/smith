@@ -36,19 +36,30 @@ div#popup {
   top: 15%;
 }
 p.photo{
+  background-color: #000;
+  box-shadow: 10px 10px 5px #333333;
+  overflow: hidden;
+  width: 175px;
   text-align: center;
   float: left;
-  height: 250px;
+  height: 175px;
   margin: 10px;
+  position: relative;
+  border: 2px solid #333;
 }
 p.photo img{
-  border: 2px solid #333;
+}
+p.photo span {
+  background-color: #000;
+  position: absolute;
+  top: 75%;
+  left: 0;
+  width: 175px;
 }
 div#clear{
   clear: both;
 }
 img {
-  max-width: 100%;
 }
 pre {
   background-color: #eee;
