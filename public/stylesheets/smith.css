@@ -1,7 +1,10 @@
 body {
+/*
   background: url("/images/bg-grey.png") repeat scroll 0 0 gray;
+*/
+  background-color: #333;
   border-top: 2px solid black;
-  color: black;
+  color: #333;
   height: 100%;
   margin: 0px auto;
   padding: 0px;
@@ -163,20 +166,33 @@ div#header h1{
   font-size: 3.4615em;  /* 55 / 16 */
   margin-bottom: 15px;
 }
-div#header h1 a {
+div#header h1 a.old {
   color: #C2C5C6;
-   -webkit-transition: all .4s ease-in-out;
+   -webkit-transition: all .3s ease-in-out;
    -moz-transition: all .4s ease-in-out; 
    -o-transition: all .4s ease-in-out;
    transition: all .4s ease-in-out;
    font-variant: small-caps;
   text-shadow: 1px 1px white, -1px -1px #444;
 }
-div#header h1 a:hover{
+div#header h1 a {
+    -moz-transition: all 0.4s ease-in-out 0s;
+    border-radius: 5px 5px 5px 5px;
+    color: #lightGrey;
+    font-variant: small-caps;
+    padding: 10px;
+    text-shadow: 1px 2px 1px #666666;
+}
+div#header h1 a.old:hover{
    color: #3AA6D0;
    /*font-size: 102%;*/
    text-shadow: 1px 1px #ccc, -1px -1px #444;
 }
+div#header h1 a:hover{
+    color: #222;
+    text-shadow: 1px 2px 1px #666;
+}
+
 div#header p{
   margin: 0 auto 7px;
   padding-bottom: .263%;
@@ -193,17 +209,28 @@ div#nav {
   margin-right: auto;
   margin-bottom: 0px;
   max-width: 100%; 
+/*
   background: white;
+*/
 }
 div#nav {
   text-align: right;
   padding: 0px 10px 1px 10px;
+/*
   border: 2px solid black;
   border-bottom: 0;
+*/
 }
 h2, h3, h4, h5, h6 {
   font-family: 'FranklinGothicFSDemiCondensed',"Helvetica Neue",Arial,Helvetica,sans-serif;
   text-transform: uppercase;
+}
+.twitter-page, .post {
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px #000;
+  background-color: #F8FBFF;
+  padding: 10px;
+  margin: 10px 0px;
 }
 .post p {
   font-family: Georgia,"Times New Roman",Times,serif;
@@ -224,13 +251,20 @@ div.post h2 {
   font-size: 2em; /*  32/16px */
 }
 div#nav li {
+/*
   background: gray url('/images/bg-grey.png');
+*/
   display: inline;
+/*
   padding: 10px 10px 3px 10px;
+*/
   -moz-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
 }
 div#nav li a {
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 0 3px #333;
   color: lightGrey;
    -webkit-transition:color .4s ease-in-out;
    -moz-transition: color .4s ease-in-out;   
@@ -239,10 +273,11 @@ div#nav li a {
 }
 div#nav li a:hover {
   color: #3AA6D0;
-   -webkit-transition:color .3s ease-in-out;
-   -moz-transition:color .3s ease-in-out;
-   -o-transition:color .3s ease-in-out;
-   transition:color .3s ease-in-out; 
+  box-shadow: 0 0px 3px #111111;
+   -webkit-transition:all .3s ease-in-out;
+   -moz-transition:all .3s ease-in-out;
+   -o-transition:all .3s ease-in-out;
+   transition:all .3s ease-in-out; 
 }
 div#nav li:hover {
   border-bottom: 0px solid #3AA6D0;
@@ -256,14 +291,10 @@ div#nav li:hover {
     text-align: center;
   }
   div#nav ul {
-    margin-top: 3px;
+    margin-top: 20px;
   }
   div#nav li {
-    background: none;
     display: inline;
-    padding: 10px 4px 3px 4px;
-    -moz-border-radius: 0 0 10px 10px;
-    border-radius: 0 0 10px 10px;
   }
   div#nav li a {
     color: #3AA6D0;
@@ -274,6 +305,21 @@ div#nav li:hover {
   div#header h1 {
     font-size: 2.5em;
   }
+  div#nav ul {
+    padding: 0px;
+  }
+  div#nav li {
+    display: list-item;
+    padding: 15px;
+  }
+  div#nav li a{
+    border: 1px solid #222;
+    box-shadow: 0 0 0px #333;
+  }
+  div#nav li a:hover {
+    box-shadow: 0 0 0px #333;
+  }
+
 }
 @media screen and (max-width: 350px) {
   div#header h1 {
@@ -287,14 +333,18 @@ div#body {
   margin-bottom: 5px;
   margin-top: 0;
   max-width: 100%; /* 800px / 800px */
+/*
   background: white;
+*/
   text-align: left;
   padding: 10px;
   -moz-border-radius: 0px 0px 10px 10px;
   border-radius: 0px 0px 10px 10px;
  /* border: 8px solid rgba(255, 255, 255, 0.1); */
-  border: 2px solid black;
+/* 
+ border: 2px solid black;
   border-top: 0;
+*/
  /* -moz-box-shadow: -5px 5px 2px gray;
   box-shadow: -2px 0px 5px gray;
  */
@@ -320,8 +370,8 @@ span.first-letter {
   margin: 0;
 }
 div#posts {
-  padding: 10px;
-  margin: 10px;
+  padding: 1px;
+  margin: 0px;
 }
 div#posts .post {
 }
