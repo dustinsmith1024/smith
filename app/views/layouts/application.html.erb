@@ -31,10 +31,11 @@
           <p class="flash <%= key %>"><%= value %></p>
         <% end %>
     </div>
-    <div id="user_nav">
+    <div id="user_nav" class="post">
       <% if current_user %>
         Logged in as <%= current_user.email %>.
-        <%= link_to "Log out", log_out_path %>
+        <%= link_to "Log out", log_out_path %> | 
+	<%= link_to "New Post", new_post_path %>
       <% end %>
     </div>
     <%= yield %>
