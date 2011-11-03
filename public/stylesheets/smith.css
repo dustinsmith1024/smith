@@ -9,7 +9,7 @@ body {
   margin: 0px auto;
   padding: 0px;
   position: relative;
-  text-align: center;
+  text-align: right;
   width: 85%; /* 1042px */
 }
 body, p, ol, ul, td {
@@ -164,11 +164,11 @@ a img {
 }
 div#header h1{
   font-size: 3.4615em;  /* 55 / 16 */
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 div#header h1 a.old {
   color: #C2C5C6;
-   -webkit-transition: all .3s ease-in-out;
+   -webkit-transition: all .4s ease-in-out;
    -moz-transition: all .4s ease-in-out; 
    -o-transition: all .4s ease-in-out;
    transition: all .4s ease-in-out;
@@ -177,11 +177,15 @@ div#header h1 a.old {
 }
 div#header h1 a {
     -moz-transition: all 0.4s ease-in-out 0s;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -o-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
     border-radius: 5px 5px 5px 5px;
     color: #lightGrey;
+    color: #3AA6D0;
     font-variant: small-caps;
     padding: 10px;
-    text-shadow: 1px 2px 1px #666666;
+    text-shadow: 1px 1px 1px #CCC;
 }
 div#header h1 a.old:hover{
    color: #3AA6D0;
@@ -259,6 +263,7 @@ div#nav li {
   padding: 10px 10px 3px 10px;
 */
   -moz-border-radius: 0 0 10px 10px;
+  -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
 }
 div#nav li a {
@@ -288,7 +293,7 @@ div#nav li:hover {
     width: 95%; /* 1042px */
   }
   div#nav {
-    text-align: center;
+    text-align: right;
   }
   div#nav ul {
     margin-top: 20px;
@@ -299,14 +304,19 @@ div#nav li:hover {
   div#nav li a {
     color: #3AA6D0;
   }
+  div#header h1 {
+    font-size: 3em;
+  }
 }
 
 @media screen and (max-width: 450px) {
   div#header h1 {
     font-size: 2.5em;
+    text-align: center;
   }
   div#nav ul {
     padding: 0px;
+    text-align: center;
   }
   div#nav li {
     display: list-item;
@@ -315,6 +325,7 @@ div#nav li:hover {
   div#nav li a{
     border: 1px solid #222;
     box-shadow: 0 0 0px #333;
+    padding: 10px 40px;
   }
   div#nav li a:hover {
     box-shadow: 0 0 0px #333;
@@ -339,6 +350,7 @@ div#body {
   text-align: left;
   padding: 10px;
   -moz-border-radius: 0px 0px 10px 10px;
+  -webkit-border-radius: 0px 0px 10px 10px;
   border-radius: 0px 0px 10px 10px;
  /* border: 8px solid rgba(255, 255, 255, 0.1); */
 /* 
