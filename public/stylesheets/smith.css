@@ -12,6 +12,7 @@ body {
   position: relative;
   text-align: right;
   width: 85%; /* 1042px */
+  max-width: 960px;
 }
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -324,9 +325,11 @@ div#nav li:hover {
     padding: 15px;
   }
   div#nav li a{
-    border: 1px solid #222;
-    box-shadow: 0 0 0px #333;
+    background-color: #333; 
+    border: 1px solid #444;
+    box-shadow: 1px 1px 5px #222;
     padding: 10px 40px;
+    display: block;
   }
   div#nav li a:hover {
     box-shadow: 0 0 0px #333;
