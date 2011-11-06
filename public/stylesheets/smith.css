@@ -1,3 +1,4 @@
+/* new version */
 body {
 /*
   background: url("/images/bg-grey.png") repeat scroll 0 0 gray;
@@ -230,6 +231,39 @@ div#nav {
 h2, h3, h4, h5, h6 {
   font-family: 'FranklinGothicFSDemiCondensed',"Helvetica Neue",Arial,Helvetica,sans-serif;
   text-transform: uppercase;
+}
+h3.left-img-header {
+  float: none;
+  text-align: left;
+}
+h3.right-img-header {
+  text-align: right;
+}
+h3 img {
+  display: block;
+  padding: 1em;
+}
+p.work {
+  clear: both;
+}
+h3.left-img-header img {
+  display: block;
+  float: left;
+}
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+.left-padded {
+  padding: 0 8em;
+}
+.right-padded {
+  padding: 0 8em;
+}
+.classer{
+
 }
 .twitter-page, .post {
   border-radius: 3px;
