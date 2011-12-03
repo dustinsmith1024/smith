@@ -1,4 +1,7 @@
 /* new version */
+.center {
+  margin: auto;
+}
 body {
 /*
   background: url("/images/bg-grey.png") repeat scroll 0 0 gray;
@@ -43,7 +46,7 @@ div#popup {
 }
 p.photo{
   background-color: #000;
-  box-shadow: 10px 10px 5px #333333;
+  box-shadow: 1px 1px 5px #333333;
   overflow: hidden;
   width: 175px;
   text-align: center;
@@ -56,11 +59,12 @@ p.photo{
 p.photo img{
 }
 p.photo span {
-  background-color: #000;
+  background-color: #333;
   position: absolute;
   top: 75%;
   left: 0;
   width: 175px;
+  padding: .2em;
 }
 div#clear{
   clear: both;
@@ -290,6 +294,13 @@ div#nav ul {
 div.post h2 {
   font-size: 2em; /*  32/16px */
 }
+div.post h2 a:hover {
+  border-bottom: 1px dotted #3#3AA6D00;
+  text-decoration: underline;
+}
+div.post h2 a:hover:after {
+  content: " ...";
+}
 div#nav li {
 /*
   background: gray url('/images/bg-grey.png');
@@ -424,6 +435,7 @@ div#posts {
   margin: 0px;
 }
 div#posts .post {
+  padding: 1.5em 2.5em;
 }
 div#twitter_div ul li{
   padding: 3px;

@@ -23,18 +23,22 @@ class PostsController < ApplicationController
     #logger.info(url)
     username = "dds1024"
     user = flickr.people.findByUsername( :username => username )
-    @photo_list = flickr.people.getPublicPhotos( :user_id => user.nsid, :count => 9, :extras => 'description' )
+    begin
+      @photo_list = flickr.people.getPublicPhotos( :user_id => user.nsid, :count => 9, :extras => 'description' )
 
-    @photo_list.each do |p|
-      sizes = flickr.photos.getSizes :photo_id => p.id
-      logger.info(sizes.inspect)
-      #original = sizes.find {|s| s.label == 'Original' }
-      #original.width       # => "800"
-      logger.info(p.inspect)
-    end
-
-    logger.info(@photo_list)
+      @photo_list.each do |p|
+        sizes = flickr.photos.getSizes :photo_id => p.id
+        #logger.info(sizes.inspect)
+        #original = sizes.find {|s| s.label == 'Original' }
+        #original.width       # => "800"
+        #logger.info(p.inspect)
+      end
+    rescue
+      @photo_list = []
+      flash[:notice]="Something happend with Flickr's API, try refreshing to fix."
+      #logger.info(@photo_list)
       #@posts = Post.tagged_with("me")
+    end
       respond_to do |format|
         format.html
       end

@@ -7,6 +7,7 @@
   Click the photo for a pop-up image.
   Click the blue titles for full size image.
 </p>
+<div class="center">
 <% @photo_list.each do |photo| %>
   <p class="photo">
     <% info = flickr.photos.getInfo(:photo_id => photo.id) %>
@@ -23,5 +24,6 @@
     </span>
   </p>
 <% end %>
+</div>
 <div id="clear">&nbsp;</div>
 </div>
