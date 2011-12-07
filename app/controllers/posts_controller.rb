@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     username = "dds1024"
     user = flickr.people.findByUsername( :username => username )
     begin
-      @photo_list = flickr.people.getPublicPhotos( :user_id => user.nsid, :count => 9, :extras => 'description' )
+      @photo_list = flickr.people.getPublicPhotos( :user_id => user.nsid, :per_page => 12, :extras => 'description' )
 
       @photo_list.each do |p|
         sizes = flickr.photos.getSizes :photo_id => p.id
