@@ -335,6 +335,20 @@ div#nav li:hover {
   border-bottom: 0px solid #3AA6D0;
 }
 
+@media screen and (max-width: 1000px) {
+
+  .left-padded {
+    padding: 0 3em;
+  }
+  .right-padded {
+    padding: 0 3em;
+  }
+  #work h3 img {
+      padding: .3em;
+  }
+
+}
+
 @media screen and (max-width: 600px) {
   body {
     width: 95%; /* 1042px */
@@ -354,6 +368,27 @@ div#nav li:hover {
   div#header h1 {
     font-size: 3em;
   }
+  /* Shrink up the work page */
+  .left-padded {
+    padding: .4em 1em;
+  }
+  .right-padded {
+    padding: .4em 1em;
+  }
+  .intro.right {
+    text-align:left;
+  }
+  #work h3 img {
+      padding: .4em .1em;
+  }
+  .post img {
+    float: left;
+  }
+  /* shrhink up twitter margins */
+  div#twitter_div ul {
+    padding: 0;
+  }
+
 }
 
 @media screen and (max-width: 450px) {
@@ -378,6 +413,12 @@ div#nav li:hover {
   }
   div#nav li a:hover {
     box-shadow: 0 0 0px #333;
+  }
+  #work h3 img {
+      display: none;
+  }
+  #work h3 img:first-child {
+    display: block;
   }
 
 }
