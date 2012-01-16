@@ -2,6 +2,7 @@ Smith::Application.routes.draw do
 
   resources :posts
   match '/twitter/' => 'posts#twitter' 
+  match '/paleo/' => 'posts#paleo', :as => "paleo"
   match '/me/' => 'posts#me'
   match '/work/' => 'posts#work'
   match '/pictures' => 'posts#pictures'

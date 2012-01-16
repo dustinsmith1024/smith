@@ -1,0 +1,24 @@
+<div class="twitter-page">
+<h2>My <img src="images/twitter-blue.png" class="twitter-link" /> Posts</h2>
+<p>Follow me <a href="http://twitter.com/#!/dds1024">@dds1024</a>.</p>
+
+<%= link_to "Blog View", paleo_path(:blog => '') %>
+| <%= link_to "View 40", paleo_path(:count => '40') %>
+| <%= link_to "View 100", paleo_path(:count => '100') %>
+
+<div class="center">
+<% @pics.map do |pic| %>
+  <p class="photo food">
+    <a class="lightbox" rel="my-pics" href="<%= pic[:image_url] %>" data-user="<%= pic[:user] %>" data-desc=" <%= pic[:text] %>">
+      <img src="<%= pic[:image_url] %>" alt="" title="<%= pic[:text] %>" />
+    </a>
+    <span class="caption" >
+      <a href="<%= pic[:image_url] %>" >
+        <%= pic[:text] %>
+      </a>
+    </span>
+  </p>
+<% end %>
+</div>
+<div id="clear">&nbsp;</div>
+</div>

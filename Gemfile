@@ -9,7 +9,7 @@ gem 'mysql2'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'acts-as-taggable-on'
 gem 'flickraw'
-
+gem 'twitter'
 # Use unicorn as the web server
 # gem 'unicorn'
 

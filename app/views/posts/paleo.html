@@ -1,0 +1,19 @@
+<div class="twitter-page">
+<h2>Our <img src="images/twitter-blue.png" class="twitter-link" /> Battle</h2>
+<p>Fight with us! Follow  <a href="http://twitter.com/#!/paleofoodfight">@PaleoFoodFight</a>.</p>
+
+<%= link_to "Grid View", paleo_path %>
+| <%= link_to "View 40", paleo_path(:blog => '', :count => '40') %>
+| <%= link_to "View 100", paleo_path(:blog => '', :count => '100') %>
+
+<div id="twitter_div">
+  <ul id="twitter_update_list">
+<% @pics.map do |pic| %>
+<li> 
+  <a href="<%= pic[:image_url] %>"><img src="<%= pic[:image_url] %>" /></a>
+  <br /><%= pic[:user] %>: <%= pic[:text] %>
+</li>
+<% end %>
+</ul>
+</div>
+</div>

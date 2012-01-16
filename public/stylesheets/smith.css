@@ -56,7 +56,19 @@ p.photo{
   position: relative;
   border: 2px solid #333;
 }
-p.photo img{
+p.food .caption {
+  font-size: .8em;
+}
+p.photo.food img{
+    max-height: 300px;
+    max-width: 300px;
+}
+p.photo.food a:before {
+  background-color: #333;
+  content: attr(data-user);
+  color: white;
+  float: left;
+  width: 100%;
 }
 p.photo span {
   background-color: #333;

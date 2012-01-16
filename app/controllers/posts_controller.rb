@@ -64,6 +64,48 @@ class PostsController < ApplicationController
     end
   end
 
+  def paleo
+    Twitter.configure do |config|
+      config.consumer_key = 'WOBXTuBXu94Z8gnJ2lw'
+      config.consumer_secret = 'm0zk3JSuVGeMqhfAKh9FTS11VsYkZ5vinHWuJJCfo'
+      config.oauth_token = '448955415-krkAltBKcSB7oSZorfDGN7oautktopEQmlxMJzXj'
+      config.oauth_token_secret = '4pLdwBKyvgVwNmF4hF1b4oQrYODohdIFuBB3rweg'
+    end
+    #@tweets = Twitter.search("to:paleofoodfight", :rpp => 100, :include_entities => true)
+    if params[:count]
+      @tweets = Twitter.mentions(:count => params[:count])
+    else
+      @tweets = Twitter.mentions(:count => 20)
+    end
+    @pics = []
+    @tweets.each do |tweet, k|
+      t = Twitter.status(tweet.id, :include_entities => true)
+      if t.attrs['entities']['media']
+        image_url = t.attrs['entities']['media'][0]['media_url']
+      elsif t.attrs['entities']['urls'] and not t.attrs['entities']['urls'].empty?
+        image_url = t.attrs['entities']['urls'][0]['expanded_url'] + ':iphone'
+      else
+        next
+      end
+      
+      if image_url
+        text = tweet.text.sub('@PaleoFoodFight', '')
+        regex = Regexp.new '((https?:\/\/|www\.)([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)'
+        text = text.gsub( regex, '' )
+        @pics << { :image_url => image_url, :text => text, :user => tweet.attrs['user']['name']}
+      end
+      image_url = nil
+       
+    end
+    if not params[:blog]
+      render :template => 'posts/paleo_squares.html.erb'
+    else
+      respond_to do |format|
+        format.html
+      end
+    end
+  end
+
   # GET /posts/1
   # GET /posts/1.xml
   def show
